@@ -141,7 +141,8 @@ class candidate extends React.Component {
                     <div class="col-12 mx-auto">
                         <div className="row cust_candiate align-items-center">
                             <div className="col-12 col-lg-10 col-sm-12 mx-auto" >
-
+                                <h1>Web Developer Interview</h1>
+                                <h1>Candidate: Pranav</h1>
                                 <div className="row justify-content-center">
                                     <h1>{this.state.myArray[this.state.questionCounter].question_text}</h1>
                                 </div><br /><br />
