@@ -7,12 +7,14 @@ class Thank_you extends React.Component{
     render(){
         return(
             <>
+            <div className="thankyou">
             <NavBar/>
             <div className="m-l-100">
             <h2 className="m-t-100 m-l-24">Thank you for your registeration!. </h2>
             <h3 className="m-l-60 m-t-40">Your details are recorded</h3>
             </div>
-            <Footer></Footer>
+            <Footer/>
+            </div>
             </>
         )
     }

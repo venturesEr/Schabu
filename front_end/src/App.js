@@ -9,7 +9,9 @@ import candidate from './pages/Candidate';
 import ExpiredEmailLink from './ExpiredEmailLink';
 import Thank_you from './pages/thank_you';
 import Welcome from './pages/Welcome';
+import LandingPage from './pages/LandingPage';
 import Job_table from './pages/Job_table';
+import JobListing from './pages/JobListing';
 
 class App extends Component {
 
@@ -18,7 +20,9 @@ class App extends Component {
       <div className="App">
         <Router history={history}>
           <Switch>
-            <Route exact path="/" component={Login} />
+            <Route exact path="/" component={LandingPage}/>
+            <Route exact path="/job-listing" component={JobListing}/>
+            <Route exact path="/login" component={Login} />
             <Route exact path="/candidate" component={candidate} />
             <Route exact path="/invalidlink" component={ExpiredEmailLink} />
             <Route exact path="/thankyou" component={Thank_you} />

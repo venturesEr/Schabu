@@ -6,6 +6,7 @@ import Job_table from './Job_table';
 import NavBar from "../components/Navigation/NavBar";
 import Footer from "../components/Footer/index";
 import { NavLink } from 'react-router-dom';
+import bg from '../Assets/Schabu-Pic.jpg';
 import history from '../history'
 
 class Login extends React.Component {
@@ -26,7 +27,7 @@ class Login extends React.Component {
             .then(res => res.text())
             .then(res => {
                 this.setState({ apiResponse: res }); if (this.state.apiResponse == "Success") {
-                    alert("Your record is been keept")
+                    history.push('/thankyou')
                 }
             });
 
@@ -62,7 +63,7 @@ class Login extends React.Component {
         return (
             <>
             <NavBar></NavBar>
-            <div className="Login m-l-100">
+            <div className="Login m-l-100" style={{backgroundImage:{bg}}}>
                 <h1 className="m-t-110 m-l-24">Confirm your details</h1>
                 <h4 className="m-l-24 m-t-80">Click <a>here</a> to see the details of the job</h4>
                 <div className="container-fluid m-t-30">
