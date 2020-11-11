@@ -63,9 +63,12 @@ class Login extends React.Component {
         return (
             <>
             <NavBar></NavBar>
-            <div className="Login m-l-100" style={{backgroundImage:{bg}}}>
-                <h1 className="m-t-110 m-l-24">Confirm your details</h1>
-                <h4 className="m-l-24 m-t-80">Click <a>here</a> to see the details of the job</h4>
+            <div style={{backgroundImage:`url(${bg})`,width:'100%', height:'100%', filter: 'blur(1px)', magin:'0px', backgroundSize:'cover', position:'absolute',
+            backgroundPosition:'center', backgroundRepeat:'no-repeat'}}>
+            </div>
+            <div className="Login m-l-100" style={{position:'relative', height:'850px'}}>
+                <div style={{paddingLeft:'20px',paddingTop:'40px', marginTop:'100px', color:'white', marginLeft:'800px', marginRight:'100px',height:'700px', backgroundColor:'rgba(255, 255, 255, .15)', backdropFilter:'blur(100px)',  borderRadius:'25px'}}>
+                <h1 className=" m-l-20" style={{position:'relative'}}>Confirm your details</h1>
                 <div className="container-fluid m-t-30">
                     <h5 className="m-l-14 m-b-24">Your Personal Details</h5>
                     <div className="row m-l-30">
@@ -95,7 +98,7 @@ class Login extends React.Component {
                                 <Button variant="primary" type="submit">
                                     Confirm
                                 </Button>
-                                <Button className="m-l-30 orrange" type="submit">
+                                <Button href="/job-listing" className="m-l-30 orrange" type="submit">
                                     Cancel
                                 </Button>
 
@@ -106,6 +109,7 @@ class Login extends React.Component {
                             <p>{this.state.apiResponse}</p>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         <Footer/>

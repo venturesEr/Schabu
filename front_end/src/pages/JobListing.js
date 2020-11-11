@@ -39,6 +39,7 @@ class JobListing extends React.Component {
                                         <th scope="col">Job Name</th>
                                         <th scope="col">Job Role</th>
                                         <th scope="col">Job Type</th>
+                                        <th scope="col">Apply</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -50,6 +51,7 @@ class JobListing extends React.Component {
                                             <td>{this.state.myArray != null ? person.job_name : ""}</td>
                                             <td>{this.state.myArray != null ? person.job_role : ""}</td>
                                             <td>{this.state.myArray != null ? person.job_type : ""}</td>
+                                            <td><a className="btn orrange btn-lg" href="/login">Button</a></td>
                                         </tr>
 
                                     )) : ""}
