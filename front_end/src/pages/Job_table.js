@@ -24,8 +24,6 @@ class Job_table extends React.Component {
 
 
     render() {
-
-
         return (
             <div className="job_table">
                 <div className="container-fluid">

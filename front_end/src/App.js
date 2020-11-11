@@ -19,7 +19,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/login" component={Login} />
             <Route exact path="/candidate" component={candidate} />
-            <Route exact path="/invalidurllink" component={ExpiredEmailLink} />
+            <Route exact path="/invalidlink" component={ExpiredEmailLink} />
             <Route exact path="/thankyou" component={Thank_you} />
             <Route exact path="/welcome" component={Welcome} />
             <Route exact path="/jobtable" component={Job_table} />

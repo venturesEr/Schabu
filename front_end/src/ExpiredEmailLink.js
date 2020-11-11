@@ -4,7 +4,7 @@ class ExpiredEmailLink extends React.Component{
     render(){
         return(
             <div className="">
-                <h1>Soory your link is no longer a valid link!</h1>
+                <h1>Sorry your link is no longer valid!</h1>
             </div>
         )
     }

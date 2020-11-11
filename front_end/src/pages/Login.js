@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Job_table from './Job_table';
 import { NavLink } from 'react-router-dom';
-import history from './history'
+import history from '../history'
 
 class Login extends React.Component {
 

@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap'
 import { Redirect } from "react-router-dom";
 import MicRecorder from 'mic-recorder-to-mp3'
 import './candidate.css'
-import history from './history'
+import history from '../history'
 
 const Mp3Recorder = new MicRecorder({ bitRate: 256 });
 let Question = [{ "question_id": 1, "question_text": "Are you and australian Resident?" }];
