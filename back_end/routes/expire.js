@@ -48,7 +48,7 @@ router.get('/', function(req, res, next){
          if(h1[0].DateDiff < 2){ //this will tell the validation is for 2 hours
              res.redirect("http://localhost:3000/welcome?name="+h1[0].candidate_firstname)
          }else{
-             res.redirect("http://localhost:3000/invalidurllink")
+             res.redirect("http://localhost:3000/invalidlink")
          }
       });
     

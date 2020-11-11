@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { Button } from 'react-bootstrap'
 import { Redirect } from "react-router-dom";
 import MicRecorder from 'mic-recorder-to-mp3'
-import './candidate.css'
+import '../css/candidate.css'
+import NavBar from "../components/Navigation/NavBar";
+import Footer from "../components/Footer/index";
 import history from '../history'
 
 const Mp3Recorder = new MicRecorder({ bitRate: 256 });
@@ -157,6 +159,8 @@ class candidate extends React.Component {
         name = name.split("=")[1];
 
         return (
+            <>
+            <NavBar/>
             <div classNanme="candidate">
                 <div className="container-fluid nav_bg">
                     <div class="col-12 mx-auto">
@@ -195,6 +199,8 @@ class candidate extends React.Component {
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
+            </>
         )
     }
 }

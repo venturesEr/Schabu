@@ -1,8 +1,10 @@
 import React from 'react'
-import "./Login.css"
+import "../css/Login.css"
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Job_table from './Job_table';
+import NavBar from "../components/Navigation/NavBar";
+import Footer from "../components/Footer/index";
 import { NavLink } from 'react-router-dom';
 import history from '../history'
 
@@ -58,24 +60,29 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div className="Login">
-                <div className="container-fluid">
-                    <div className="col-12 col-lg-12 col-sm-12 mx-auto">
-                        <div className="row align-items-center justify-content-center cust_row">
+            <>
+            <NavBar></NavBar>
+            <div className="Login m-l-100">
+                <h1 className="m-t-110 m-l-24">Confirm your details</h1>
+                <h4 className="m-l-24 m-t-80">Click <a>here</a> to see the details of the job</h4>
+                <div className="container-fluid m-t-30">
+                    <h5 className="m-l-14 m-b-24">Your Personal Details</h5>
+                    <div className="row m-l-30">
+                        <div className="row cust_row">
                             {/* from contents can go here */}
                             <Form onSubmit={this.handleSubmit}>
                                 <Form.Group controlId="formBasicEmail">
-                                    <Form.Label>Enter your name</Form.Label>
+                                    <Form.Label>Your Name</Form.Label>
                                     <Form.Control value={this.state.value} onChange={this.handleChangeName} placeholder="Enter your first name" />
 
-                                    <Form.Label>Enter your Email</Form.Label>
+                                    <Form.Label className="m-t-20">Email Address</Form.Label>
                                     <Form.Control value={this.state.value} onChange={this.handleChangeEmail} placeholder="Enter your email name" />
 
 
-                                    <Form.Label>Enter your Phone Number</Form.Label>
+                                    <Form.Label className="m-t-20">Phone Number</Form.Label>
                                     <Form.Control value={this.state.value} onChange={this.handleChangePhone} placeholder="Enter your phone number" />
 
-                                    <Form.Label>Select any job id</Form.Label>
+                                    <Form.Label className="m-t-20">Job ID</Form.Label>
                                     <select className="custom-select"value={this.state.value} onChange={this.handleChangeJobRole} >
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -85,7 +92,10 @@ class Login extends React.Component {
 
                                 <a href='http://localhost:3000/jobtable' target='__blank'>Click here to see the details of the Job!</a><br/><br/>
                                 <Button variant="primary" type="submit">
-                                    Submit
+                                    Confirm
+                                </Button>
+                                <Button className="m-l-30 orrange" type="submit">
+                                    Cancel
                                 </Button>
 
                             </Form>
@@ -97,6 +107,8 @@ class Login extends React.Component {
                     </div>
                 </div>
             </div>
+        <Footer/>
+        </>
         )
     }
 }

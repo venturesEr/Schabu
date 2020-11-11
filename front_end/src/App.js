@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { Switch, Route, Redirect, Router } from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Login from './Login';
+import "./css/Ultil.css";
+import Login from './pages/Login';
 import history from './history';
-import candidate from './Candidate';
+import candidate from './pages/Candidate';
 import ExpiredEmailLink from './ExpiredEmailLink';
-import Thank_you from './thank_you';
-import Welcome from './Welcome';
-import Job_table from './Job_table';
+import Thank_you from './pages/thank_you';
+import Welcome from './pages/Welcome';
+import Job_table from './pages/Job_table';
 
 class App extends Component {
 
