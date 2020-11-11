@@ -18,7 +18,7 @@ class App extends Component {
       <div className="App">
         <Router history={history}>
           <Switch>
-            <Route exact path="/login" component={Login} />
+            <Route exact path="/" component={Login} />
             <Route exact path="/candidate" component={candidate} />
             <Route exact path="/invalidlink" component={ExpiredEmailLink} />
             <Route exact path="/thankyou" component={Thank_you} />

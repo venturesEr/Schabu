@@ -1,11 +1,11 @@
 import React from 'react';
+import NavBar from "../components/Navigation/NavBar";
+import Footer from "../components/Footer/index";
 
 class Job_table extends React.Component {
 
     constructor() {
         super()
-
-
         this.state = {
             myArray: null,
         }
@@ -25,6 +25,8 @@ class Job_table extends React.Component {
 
     render() {
         return (
+            <>
+            <NavBar/>
             <div className="job_table">
                 <div className="container-fluid">
                     <div className="col-12 col-lg-12 col-sm-12 mx-auto">
@@ -59,6 +61,8 @@ class Job_table extends React.Component {
                     </div>
                 </div>
             </div>
+            <Footer/>
+            </>
         )
     }
 }
