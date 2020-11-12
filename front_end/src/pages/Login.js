@@ -67,7 +67,7 @@ class Login extends React.Component {
             backgroundPosition:'center', backgroundRepeat:'no-repeat'}}>
             </div>
             <div className="Login m-l-100" style={{position:'relative', height:'850px'}}>
-                <div style={{paddingLeft:'20px',paddingTop:'40px', marginTop:'100px', color:'white', marginLeft:'800px', marginRight:'100px',height:'700px', backgroundColor:'rgba(255, 255, 255, .15)', backdropFilter:'blur(100px)',  borderRadius:'25px'}}>
+                <div style={{paddingLeft:'20px',paddingTop:'40px', marginTop:'100px', color:'white', marginLeft:'1000px', marginRight:'200px',height:'700px', backgroundColor:'rgba(255, 255, 255, .15)', backdropFilter:'blur(100px)',  borderRadius:'25px'}}>
                 <h1 className=" m-l-20" style={{position:'relative'}}>Confirm your details</h1>
                 <div className="container-fluid m-t-30">
                     <h5 className="m-l-14 m-b-24">Your Personal Details</h5>
