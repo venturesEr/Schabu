@@ -6,7 +6,7 @@ import "./css/Ultil.css";
 import Login from './pages/Login';
 import history from './history';
 import candidate from './pages/Candidate';
-import ExpiredEmailLink from './ExpiredEmailLink';
+import ExpiredEmailLink from './pages/ExpiredEmailLink';
 import Thank_you from './pages/thank_you';
 import Welcome from './pages/Welcome';
 import LandingPage from './pages/LandingPage';

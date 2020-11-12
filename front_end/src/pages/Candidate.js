@@ -162,41 +162,39 @@ class candidate extends React.Component {
             <>
             <NavBar/>
             <div classNanme="candidate">
-                <div className="container-fluid nav_bg">
-                    <div class="col-12 mx-auto">
-                        <div className="row cust_candiate align-items-center">
-                            <div className="col-12 col-lg-10 col-sm-12 mx-auto" >
+                <div className="jumbotron">
+                        <div className="row cust_candiate">
+                            <div className="m-l-100 " style={{width:'1600px',backgroundColor:'white'}}>
                             {this.state.redirect == true ? <Redirect exact to='thankyou'/> : null}
-                                <div className="row justify-content-center">
-                                    <h6>Hello, {name}, start recording when you are ready!</h6>
+                                <div className="m-t-40 m-l-30">
+                                    <h1>Hello, {name}, start recording when you are ready!</h1>
                                 </div>
-                                <div className="row justify-content-center">
+                                <div  className="m-t-40 m-l-30">
                                     <h1>{this.state.myArray[this.state.questionCounter].question_text}</h1>
-                                </div><br /><br />
-
-
-                                <div className="row ">
-                                    <div className="col-12 col-lg-6">
+                                </div>
+                                <div  className="m-t-40 m-l-30">
+                                    <div>
                                         {this.state.myArray[this.state.questionCounter].recCounter <= 0 ?
-                                            <Button disabled="true">Record</Button>
-                                            : <Button type="primary" onClick={this.start} disabled={this.state.isRecording}>Record</Button>}
-                                        <h6>Recording Left: - {this.state.myArray[this.state.questionCounter].recCounter}</h6>
-                                        <Button onClick={this.stop} disabled={!this.state.isRecording}>
-                                            Stop
+                                            <Button className="m-t-30" disabled="true">Click to record</Button>
+                                            : <Button className="m-t-30" type="primary" onClick={this.start} disabled={this.state.isRecording}>Click to Record</Button>}
+                                        <h6 className="m-t-30">Recording Left: - {this.state.myArray[this.state.questionCounter].recCounter}</h6>
+                                        <Button className="m-t-20" onClick={this.stop} disabled={!this.state.isRecording}>
+                                            Stop Recording
                                         </Button>
+                                        <div className="m-t-30">
                                         <audio src={this.state.myArray[this.state.questionCounter].recURL} controls="controls" />
+                                        </div>
                                     </div>
                                     {console.log(this.state.myArray)}
 
-                                    <div className="col-12 col-lg-6">
-                                        <div className="row justify-content-center">
+                                    <div className="m-t-30">
+                                        <div>
                                             {this.state.questionCounter < (this.state.myArray.length - 1) ? <Button type="primary" onClick={this.nextButton}>Next</Button> : <Button type="primary" onClick={this.done}>Finish</Button>}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
             <Footer></Footer>
