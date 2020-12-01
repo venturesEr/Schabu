@@ -15,7 +15,6 @@ import os
 import sys
 from pydub import AudioSegment
 
-
 def speech_recognize_continuous_from_file(key, reg, file):
     """performs continuous speech recognition with input from an audio file"""
     speech_config = speechsdk.SpeechConfig(subscription=key, region=reg)
@@ -47,12 +46,11 @@ def speech_recognize_continuous_from_file(key, reg, file):
 # Store all speech to text Input Here
 
 
-src = "C:/Users/Pranav Patel/Documents/schabu/back_end/routes/public/mp3/"+sys.argv[1]
-dst = "C:/Users/Pranav Patel/Documents/schabu/back_end/routes/public/wav/"+sys.argv[1]+".wav"
+src = sys.argv[2]+"/mp3/"+sys.argv[1] #"C:/Users/Pranav Patel/Documents/schabu/back_end/routes/public/mp3/"+sys.argv[1]
+dst = sys.argv[2]+"/wav/"+sys.argv[1] # "C:/Users/Pranav Patel/Documents/schabu/back_end/routes/public/wav/"+sys.argv[1]+".wav"
 
 sound = AudioSegment.from_mp3(src)
 sound.export(dst, format="wav")
-
 
 if os.path.exists(dst):
     text_output = speech_recognize_continuous_from_file("b58d19e457574aa39bc0f8b9b763cd55", "australiaeast", dst)

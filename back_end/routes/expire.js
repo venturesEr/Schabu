@@ -46,9 +46,9 @@ router.get('/', function(req, res, next){
       request.on("row", columns => {
         let h1 = JSON.parse(columns[0].value)
          if(h1[0].DateDiff < 2){ //this will tell the validation is for 2 hours
-             res.redirect("http://localhost:3000/welcome?name="+h1[0].candidate_firstname)
+             res.redirect("http://demo-schabu.azurewebsites.net/welcome?name="+h1[0].candidate_firstname)
          }else{
-             res.redirect("http://localhost:3000/invalidlink")
+             res.redirect("http://demo-schabu.azurewebsites.net/invalidlink")
          }
       });
     

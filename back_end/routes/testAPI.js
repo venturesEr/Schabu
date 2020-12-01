@@ -6,6 +6,10 @@ var nodemailer = require('nodemailer');
 var hash = require('object-hash');
 const { Connection, Request } = require("tedious");
 
+//clickSend
+var api = require("../node_modules/clicksend/api.js");
+var smsApi = new api.SMSApi("SleepDrunk", "8661B131-FB76-9467-BD40-461086314F9C");
+var smsMessage = new api.SmsMessage();
 
 const config = {
   authentication: {
@@ -34,9 +38,9 @@ connection.on("connect", err => {
 let send_email;
 //https://front-end-schabu.azurewebsites.net/candidate
 router.get('/', function(req, res, next) {
-    if(req.query.email != ""){
+    if(req.query.email !== ""){
         let hash_email = hash(req.query.email)
-        send_email = "http://localhost:9000/expire?code="+hash_email;
+        send_email = "https://back-end-schabu.azurewebsites.net/expire?code="+hash_email;
         let t1 = req.query.email;
         const request = new Request(
           //insert into demo_candidate (candidate_firstname, email_id, hash_code, createdAt) values ('123', '124', '567sdgreg', SYSDATETIME());
@@ -82,6 +86,19 @@ router.get('/', function(req, res, next) {
         } else {
           console.log('Email sent: ' + info.response);
         }
+      });
+      
+     smsMessage.source = "sdk";
+    smsMessage.to = req.query.phone;
+    smsMessage.body = `Welcome to Schabu \n please click on the link below to continue with the interview process \n ${send_email}`;  
+
+    var smsCollection = new api.SmsMessageCollection();
+    smsCollection.messages = [smsMessage];
+
+    smsApi.smsSendPost(smsCollection).then(function(response) {
+        console.log(response.body);
+      }).catch(function(err){
+        console.error(err.body);
       });
 
 
